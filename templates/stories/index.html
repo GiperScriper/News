@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load story_filters %}
+
+{% block content %}
+<ol>
+	{% for story in stories %}
+		<li>
+			<p>
+				<a href="{{ story.url }}">{{ story.title }}</a><span> ({{ story.domain }})</span>
+			</p>
+			<p>
+				{{ story.points }} points by {{ story.moderator.username }} {{ story.created|age }}
+			</p>
+		</li>
+	{% endfor %}
+</ol>
+<hr>
+
+<h2>Дата: {{ date }}</h2>
+<h2>Время жизни истории: {{ result }}</h2>
+{% endblock content %}
