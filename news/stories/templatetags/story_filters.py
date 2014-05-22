@@ -27,11 +27,19 @@ def age(created):
 	if age_in_minutes < 60:
 		value = age_in_minutes
 		precision = numberWord125(value, 'минута', 'минуты', 'минут')
+	
 	elif age_in_minutes < 60 * 24:
-		value = age_in_minutes // 60
+		value = age_in_minutes / 60
 		precision = numberWord125(value, 'час', 'часа', 'часов')
+	
 	else:
-		value = age_in_minutes // (60 * 24)
+		value = age_in_minutes / (60 * 24)
 		precision = numberWord125(value, 'день', 'дня', 'дней')
 
-	return "{0} {1} назад".format(value, precision)	
+	return "{0} {1} назад".format(value, precision)
+
+
+@register.filter(name='points')
+def points(value):	
+	precision = numberWord125(value, 'очко', 'очка', 'очков')
+	return "{0} {1}".format(value, precision)		

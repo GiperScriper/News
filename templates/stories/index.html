@@ -3,19 +3,16 @@
 
 {% block content %}
 <ol>
-	{% for story in stories %}
+	{% for story in stories %}		
 		<li>
-			<p>
-				<a href="{{ story.url }}">{{ story.title }}</a><span> ({{ story.domain }})</span>
-			</p>
-			<p>
-				{{ story.points }} points by {{ story.moderator.username }} {{ story.created|age }}
-			</p>
+		<p class="lead">
+			<h4><a href="{{ story.url }}">{{ story.title }}</a><small> ({{ story.domain }})</small></h4>
+			<footer class="story_footer">{{ story.points | points }}, добавил <em>{{ story.moderator.username }}</em> 
+			<cite title="Source Title">{{ story.created | age }}</cite>
+			</footer>
+		</p>
 		</li>
+		<hr>
 	{% endfor %}
 </ol>
-<hr>
-
-<h2>Дата: {{ date }}</h2>
-<h2>Время жизни истории: {{ result }}</h2>
 {% endblock content %}
