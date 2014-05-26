@@ -38,8 +38,25 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="{% url 'home' %}">Новости</a>
-        </div>        
-      </div>
+        </div>
+        
+		<div class="pull-right">       
+        {% if user.is_authenticated %}
+        	<!--<div>{{ user.username }} | <a href="/story/">Добавить новость</a> | <a href="/logout/">Выйти</a></div>-->
+        	<ul class="nav navbar-nav">              
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/story/">Добавить новость</a></li>
+                    <li><a href="/logout/">Выйти</a></li> 
+                  </ul>
+                </li>
+              </ul>
+        {% else %} 
+            <a href="/login/" class="btn btn-success btn_login">Войти</a></li>
+        {% endif %}
+        </div>		 
+      </div>  	
     </div>
 
     <div class="container">
