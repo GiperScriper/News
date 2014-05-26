@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from annoying.decorators import render_to
 from django.utils.timezone import utc
+from django.contrib.auth.decorators import login_required
 
 from .models import Story
 from .forms import StoryForm
@@ -31,6 +32,7 @@ def index(request):
 	return locals()
 
 
+@login_required
 @render_to('stories/create.html')
 def story(request):
 	if request.method == 'POST':
@@ -41,4 +43,10 @@ def story(request):
 	else:
 		form = StoryForm()
 
+	return locals()
+
+
+def login(request):
+	stories = Story.objects.all().order_by('-created')
+	
 	return locals()
