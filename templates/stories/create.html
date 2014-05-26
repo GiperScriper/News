@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load story_filters %}
+
+{% block title %}Добавить новость{% endblock title %}
+
+{% block content %}
+<form action="/story/" method="POST">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Добавить">
+</form>
+{% endblock content %}

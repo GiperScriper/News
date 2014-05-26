@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load story_filters %}
 
+{% block title %}Агрегатор новостей{% endblock title %}
+
 {% block content %}
 <ol>
 	{% for story in stories %}		

@@ -7,5 +7,5 @@ urlpatterns = patterns('',
     
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', include('stories.urls')),
+    url(r'', include('stories.urls')),
 )

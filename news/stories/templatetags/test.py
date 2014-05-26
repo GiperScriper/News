@@ -13,6 +13,6 @@ def numberWord125(value, word1, word2, word5):
 
 
 minutes = numberWord125(7, 'минута', 'минуты', 'минут')
-hours = numberWord125(7, 'час', 'часа', 'часов')
+hours = numberWord125(11, 'час', 'часа', 'часов')
 days = numberWord125(7, 'день', 'дня', 'дней')
 print minutes, hours, days
