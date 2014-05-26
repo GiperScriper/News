@@ -17,6 +17,6 @@
 </ul>
 
 <h4>Главная страница:</h4>
-![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/promo.jpg)
+![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/promo.jpg)
 <h4>Страница добавления новости через Django Admin</h4>
-![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/add_from_admin.jpg)
+![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/add_from_admin.jpg)
