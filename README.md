@@ -7,4 +7,4 @@
 	<li>Admin interface with Django Suit</li>
 	<li>Лайк новостей</li>
 </ul>
-![ScreenShot](some_url)
+![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/promo.jpg)
