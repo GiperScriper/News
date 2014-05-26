@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from annoying.decorators import render_to
 from django.utils.timezone import utc
 from django.contrib.auth.decorators import login_required
@@ -11,42 +12,38 @@ from .forms import StoryForm
 from datetime import datetime
 
 
-def score(story, gravity=1.8, timebase=120):
-	points = story.points**0.8
-	now = datetime.utcnow().replace(tzinfo=utc)
-	age = int((now - story.created).total_seconds()) / 60
-
-	return points / (age*timebase)**gravity
-
-
-def top_stories(top=180, consider=1000):
-	latest_stories = Story.objects.all().order_by('-created')[:consider]
-	ranked_stories = [ (score(story), story) for story in latest_stories ]
-	return [ story for _, story in ranked_stories[:top] ]
-
-
-@render_to('stories/index.html')
 def index(request):
 	stories = Story.objects.all().order_by('-created')
-	
-	return locals()
+
+	if request.user.is_authenticated():
+		liked_stories = request.user.liked_stories.filter(id__in = [ story.id for story in stories ])
+	else:
+		liked_stories = []
+
+	return render(request, 'stories/index.html', locals())
 
 
 @login_required
-@render_to('stories/create.html')
 def story(request):
 	if request.method == 'POST':
 		form = StoryForm(request.POST)
 		if form.is_valid():
-			form.save()
-			return redirect(request, 'home')
+			story = form.save(commit=False)
+			story.moderator = request.user
+			story.save()
+			return HttpResponseRedirect('/')
 	else:
 		form = StoryForm()
 
-	return locals()
+	return render(request, 'stories/create.html', locals())
 
 
-def login(request):
-	stories = Story.objects.all().order_by('-created')
-	
-	return locals()
+@login_required
+def vote(request):
+	story = get_object_or_404(Story, pk=request.POST.get('story'))	
+	story.points += 1
+	story.save()
+	user = request.user
+	user.liked_stories.add(story)
+	user.save()
+	return HttpResponse()

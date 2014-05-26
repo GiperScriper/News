@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load story_filters %}
 
 {% block title %}Агрегатор новостей{% endblock title %}
@@ -8,7 +9,16 @@
 	{% for story in stories %}		
 		<li>
 		<p class="lead">
-			<h4><a href="{{ story.url }}">{{ story.title }}</a><small> ({{ story.domain }})</small></h4>
+			
+			{% if user.is_authenticated and story not in liked_stories %}
+				
+				<h4><a href="{% url 'vote' %}" id="story-vote-{{ story.id }}" class="vote"><span class="glyphicon glyphicon-thumbs-up"></a></span>&nbsp;
+				<a href="{{ story.url }}">{{ story.title }}</a><small> ({{ story.domain }})</small></h4>
+			
+			{% else %}
+				<h4><a href="{{ story.url }}">{{ story.title }}</a><small> ({{ story.domain }})</small></h4>
+			{% endif %}
+			
 			<footer class="story_footer">{{ story.points | points }}, добавил <em>{{ story.moderator.username }}</em> 
 			<cite title="Source Title">{{ story.created | age }}</cite>
 			</footer>
@@ -18,3 +28,9 @@
 	{% endfor %}
 </ol>
 {% endblock content %}
+
+
+
+{% block scripts %}
+<script src="{{ STATIC_URL }}stories/js/vote.js"></script>
+{% endblock scripts %}

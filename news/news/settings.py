@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
-LOGIN_URL = '/'
+LOGIN_URL = '/login/'
+
 LOGIN_REDIRECT_URL = '/'
 
 # Application definition
@@ -110,4 +111,5 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
+    'django.core.context_processors.static',
 )
