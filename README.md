@@ -30,7 +30,7 @@
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_get_single.jpg)
 <h5>POST /api/v1/stories/{ content }</h5>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_post.jpg)
-<h5>PUT /api/v1/stories/{ content }</h5>
+<h5>PUT /api/v1/stories/7</h5>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_put.jpg)
 <h5>DELETE /api/v1/stories/24</h5>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_delete.jpg)
