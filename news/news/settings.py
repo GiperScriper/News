@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'stories',
     'annoying',
     'south',
+    'rest_framework',
+    'api',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -2,7 +2,9 @@
 
 <h3>Используемые технологии:</h3>
 <ul>
-	<li>Python (Django)</li>
+	<li>Python</li>
+	<li>Django</li>
+	<li>Django Rest Framework</li>
 	<li>SQLite3</li>
 	<li>HTML, CSS (Twitter Bootstrap)</li>
 	<li>JS (JQuery)</li>
@@ -14,6 +16,7 @@
 	<li>Добавление новостей</li>
 	<li>Admin interface with Django Suit</li>
 	<li>Лайк новостей</li>
+	<li>RESTful API</li>
 </ul>
 
 <h4>Главная страница:</h4>
