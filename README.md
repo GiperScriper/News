@@ -31,6 +31,6 @@
 <h5>POST /api/v1/stories/{ content }</h5>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_post.jpg)
 <h5>PUT /api/v1/stories/{ content }</h5>
-![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_pust.jpg)
+![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_put.jpg)
 <h5>DELETE /api/v1/stories/24</h5>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/api_delete.jpg)
