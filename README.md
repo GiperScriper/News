@@ -1,27 +1,27 @@
-<h2>Агрегатор новостей (ver. 0.1)</h2>
+<h2>News aggregation (ver. 0.1)</h2>
 
-<h3>Используемые технологии:</h3>
+<h3>Technologies:</h3>
 <ul>
 	<li>Python</li>
 	<li>Django</li>
 	<li>Django Rest Framework</li>
 	<li>SQLite3</li>
 	<li>HTML, CSS (Twitter Bootstrap)</li>
-	<li>JS (JQuery)</li>
+	<li>JS</li>
 </ul>
 
-<h3>Функционал:</h3>
+<h3>Functional:</h3>
 <ul>
-	<li>Авторизация</li>
-	<li>Добавление новостей</li>
+	<li>auth</li>
+	<li>adding news</li>
 	<li>Admin interface with Django Suit</li>
-	<li>Лайк новостей</li>
+	<li>Likes</li>
 	<li>RESTful API</li>
 </ul>
 
-<h4>Главная страница:</h4>
+<h4>Main page:</h4>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/promo.jpg)
-<h4>Страница добавления новости через Django Admin</h4>
+<h4>adding from Django Admin</h4>
 ![ScreenShot](https://raw.githubusercontent.com/GiperScriper/News/master/static/img/add_from_admin.jpg)
 <h4>RESTful API:</h4>
 <h5>GET /api/v1/stories/</h5>
