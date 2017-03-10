@@ -10,7 +10,7 @@
 	<li>JS</li>
 </ul>
 
-<h3>Functional:</h3>
+<h3>functionality:</h3>
 <ul>
 	<li>auth</li>
 	<li>adding news</li>
